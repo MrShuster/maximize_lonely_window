@@ -1,0 +1,9 @@
+{
+   "uuid": "only_window_maximize@MrShuster",
+   "name": "Only Window Maximize",
+   "description": "Maximize the only window in a workspace",
+   "shell-version": ["44"],
+   "url": "https://yourwebsite.com",
+   "version": 1
+}
+
