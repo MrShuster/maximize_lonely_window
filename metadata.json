@@ -1,9 +1,8 @@
 {
-   "uuid": "only_window_maximize@MrShuster",
+   "uuid": "maximize-lonely-window@MrShuster",
    "name": "Only Window Maximize",
    "description": "Maximize the only window in a workspace",
    "shell-version": ["44"],
-   "url": "https://yourwebsite.com",
+   "url": "https://github.com/MrShuster/maximize_lonely_window/",
    "version": 1
 }
-
