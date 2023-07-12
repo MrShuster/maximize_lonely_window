@@ -14,6 +14,7 @@ function enable() {
 function disable() {
     windowTracker.disconnect(activeWindowChangedId);
     global.window_manager.disconnect(activeWorkspaceChangedId);
+    windowTracker = null;
 }
 
 function checkAndFullScreenWindow() {
@@ -24,4 +25,3 @@ function checkAndFullScreenWindow() {
         windowsOnWorkspace[0].meta_window.maximize(Meta.MaximizeFlags.BOTH);
     }
 }
-
