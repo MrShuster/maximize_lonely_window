@@ -1,20 +1,24 @@
-const { Meta, Shell } = imports.gi;
-const Main = imports.ui.main;
+import Meta from 'gi://Meta';
+import Shell from 'gi://Shell';
+
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
 let windowTracker, activeWindowChangedId, activeWorkspaceChangedId;
 
 function init() {}
 
-function enable() {
-    windowTracker = Shell.WindowTracker.get_default();
-    activeWindowChangedId = windowTracker.connect('notify::focus-app', checkAndFullScreenWindow);
-    activeWorkspaceChangedId = global.window_manager.connect('switch-workspace', checkAndFullScreenWindow);
-}
+export default class thisExtension {
+    enable() {
+        windowTracker = Shell.WindowTracker.get_default();
+        activeWindowChangedId = windowTracker.connect('notify::focus-app', checkAndFullScreenWindow);
+        activeWorkspaceChangedId = global.window_manager.connect('switch-workspace', checkAndFullScreenWindow);
+    }
 
-function disable() {
-    windowTracker.disconnect(activeWindowChangedId);
-    global.window_manager.disconnect(activeWorkspaceChangedId);
-    windowTracker = null;
+    disable() {
+        windowTracker.disconnect(activeWindowChangedId);
+        global.window_manager.disconnect(activeWorkspaceChangedId);
+        windowTracker = null;
+    }
 }
 
 function checkAndFullScreenWindow() {
