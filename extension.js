@@ -7,7 +7,7 @@ let windowTracker, activeWindowChangedId, activeWorkspaceChangedId;
 
 function init() {}
 
-export default class thisExtension {
+export default class maximizeLonleyWindow {
     enable() {
         windowTracker = Shell.WindowTracker.get_default();
         activeWindowChangedId = windowTracker.connect('notify::focus-app', checkAndFullScreenWindow);
